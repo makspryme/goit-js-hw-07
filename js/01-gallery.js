@@ -44,8 +44,8 @@ function showAndCloseImage(e) {
     `
 	<img
             class="gallery__image"
-            src="${e.target.src}"
-            data-source=""
+            src="${e.target.dataset.source}"
+            data-source="${e.target.dataset.source}"
             alt="${e.target.alt}"
           />
 `
