@@ -1,7 +1,5 @@
 import { galleryItems } from "./gallery-items.js";
 
-console.log(galleryItems);
-
 const listGalleryEl = document.querySelector(".gallery");
 listGalleryEl.insertAdjacentHTML(
   "beforeend",
@@ -17,8 +15,8 @@ function createMakringListOfImages(elements) {
     .map(({ preview, original, description }) => {
       const marking = `
         <li class="gallery__item">
-          <a class="gallery__link" href="${original}">
-            <img class="gallery__image" src="${preview}" alt="${description}" />
+          <a self class="gallery__link" href="${original}">
+            <img class="gallery__image" src="${preview}" alt="${description}" attr="${description}"/>
           </a>
         </li>
         `;
@@ -40,4 +38,7 @@ function onClickImage(e) {
   e.preventDefault();
 }
 
-var lightbox = new SimpleLightbox(".gallery a", {});
+new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
