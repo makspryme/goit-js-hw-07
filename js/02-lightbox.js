@@ -6,8 +6,6 @@ listGalleryEl.insertAdjacentHTML(
   createMakringListOfImages(galleryItems)
 );
 
-listGalleryEl.addEventListener("click", onClickImage);
-
 createMakringListOfImages(galleryItems);
 
 function createMakringListOfImages(elements) {
@@ -26,16 +24,6 @@ function createMakringListOfImages(elements) {
     .join("");
 
   return markingImages;
-
-  console.log(markingImages);
-}
-
-function onClickImage(e) {
-  if (e.target.nodeName !== "IMG") {
-    return;
-  }
-
-  e.preventDefault();
 }
 
 new SimpleLightbox(".gallery a", {

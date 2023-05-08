@@ -53,9 +53,12 @@ function showAndCloseImage(e) {
 
   instance.show();
 
-  document.addEventListener("keydown", (e) => {
+  document.addEventListener("keydown", keyClose);
+
+  function keyClose(e) {
     if (e.key === "Escape") {
       instance.close();
+      document.removeEventListener("keydown", keyClose);
     }
-  });
+  }
 }
